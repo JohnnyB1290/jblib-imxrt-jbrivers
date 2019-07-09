@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief JbController M4 Core class definition
+ * @brief JbController Core class definition
  *
  *
  * @note
@@ -23,8 +23,8 @@
  * This file is a part of JB_Lib.
  */
 
-#ifndef JBCONTROLLERM4_HPP_
-#define JBCONTROLLERM4_HPP_
+#ifndef JBCONTROLLER_HPP_
+#define JBCONTROLLER_HPP_
 
 #include <stdint.h>
 #include "jbkernel/jb_common.h"
@@ -54,9 +54,6 @@ public:
 	static void gpioOn(uint8_t number);
 	static void gpioOff(uint8_t number);
 	static void gpioTgl(uint8_t number);
-	static void startM0App(uint32_t imageAddress);
-	static void startM0Sub(uint32_t imageAddress);
-	static void copyFwToRam(uint32_t flashAddress, uint32_t ramAddress, uint32_t size);
 	static void resetPeriphery(void);
 	static void softReset(void);
 	static void goToApp(uint32_t applicationAddress);
@@ -79,4 +76,4 @@ private:
 
 }
 
-#endif /*  JBCONTROLLERM4_HPP_ */
+#endif /*  JBCONTROLLER_HPP_ */
