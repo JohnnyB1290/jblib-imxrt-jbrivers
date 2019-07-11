@@ -29,6 +29,7 @@
 #include <stdint.h>
 #include "jbkernel/jb_common.h"
 #include "jbkernel/callback_interfaces.hpp"
+#include "jbutilities/LinkedList.hpp"
 
 #if USE_CONSOLE
 #include <stdio.h>
@@ -39,6 +40,7 @@ namespace jblib::jbdrivers
 {
 
 using namespace jbkernel;
+using namespace jbutilities;
 
 class JbController
 {
@@ -69,9 +71,13 @@ protected:
 	static BoardGpio_t boardGpios_[];
 
 private:
-	static bool isInitialized;
-	static IVoidCallback* mainProcedures_[JBCONTROLLER_NUM_MAIN_PROCEDURES];
-	static void* mainProceduresParameters_[JBCONTROLLER_NUM_MAIN_PROCEDURES];
+	static bool isInitialized_;
+	typedef struct
+	{
+		IVoidCallback* callback = NULL;
+		void* parameter = NULL;
+	}MainProceduresListItem;
+	static LinkedList<MainProceduresListItem>* mainProceduresList_;
 };
 
 }

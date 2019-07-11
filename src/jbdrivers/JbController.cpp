@@ -41,28 +41,24 @@ namespace jblib::jbdrivers
 {
 
 using namespace jbkernel;
+using namespace jbutilities;
 
 
 BoardGpio_t JbController::boardGpios_[] = JBCONTROLLER_BOARD_GPIOS;
-bool JbController::isInitialized = false;
-IVoidCallback* JbController::mainProcedures_[JBCONTROLLER_NUM_MAIN_PROCEDURES];
-void* JbController::mainProceduresParameters_[JBCONTROLLER_NUM_MAIN_PROCEDURES];
-
+bool JbController::isInitialized_ = false;
+LinkedList<JbController::MainProceduresListItem>* JbController::mainProceduresList_ =
+		new LinkedList<MainProceduresListItem>();
 
 
 void JbController::initialize(void)
 {
-	if(!isInitialized) {
-		for(uint32_t i = 0; i < JBCONTROLLER_NUM_MAIN_PROCEDURES; i++){
-			mainProcedures_[i] = NULL;
-			mainProceduresParameters_[i] = NULL;
-		}
+	if(!isInitialized_) {
 		NVIC_SetPriorityGrouping(0x03); //All 4 bits for pre-emption priority
 		__enable_irq();
 		BOARD_InitBootPins();
 	    BOARD_InitBootClocks();
 	    BOARD_InitBootPeripherals();
-		isInitialized = true;
+		isInitialized_ = true;
 	}
 }
 
@@ -121,30 +117,32 @@ void JbController::resetPeriphery(void)
 
 void JbController::softReset(void)
 {
-//	Chip_RGU_TriggerReset(RGU_M3_RST);
-//	while (Chip_RGU_InReset(RGU_M3_RST)) {}
+
 }
 
 
 
 void JbController::goToApp(uint32_t applicationAddress)
 {
-	__disable_irq();
-//	LPC_CREG->MXMEMMAP = applicationAddress & ~0xFFF;
-	JbController::delayUs(100);
-	JbController::softReset();
+
 }
 
 
 
 void JbController::doMain(void)
 {
-	for(uint32_t i = 0; i < JBCONTROLLER_NUM_MAIN_PROCEDURES; i++) {
-		if(mainProcedures_[i])
-			mainProcedures_[i]->voidCallback(NULL,
-					mainProceduresParameters_[i]);
-		else
-			break;
+	if(!mainProceduresList_->isEmpty()){
+		LinkedList<MainProceduresListItem>::LinkIterator* iterator =
+				mainProceduresList_->getIterator();
+		iterator->reset();
+		while(1){
+			iterator->getCurrent()->callback->
+					voidCallback(NULL, iterator->getCurrent()->parameter);
+			if(!iterator->atEnd())
+				iterator->nextLink();
+			else
+				break;
+		}
 	}
 }
 
@@ -152,44 +150,28 @@ void JbController::doMain(void)
 
 void JbController::addMainProcedure(IVoidCallback* callback, void* parameter)
 {
-	for(uint32_t i = 0; i < JBCONTROLLER_NUM_MAIN_PROCEDURES; i++) {
-		if((mainProcedures_[i] == callback) &&
-				mainProceduresParameters_[i] == parameter){
-			break;
-		}
-		if(mainProcedures_[i] == NULL) {
-			mainProcedures_[i] = callback;
-			mainProceduresParameters_[i] = parameter;
-			break;
-		}
-	}
+	MainProceduresListItem* newItem = new MainProceduresListItem();
+	newItem->callback = callback;
+	newItem->parameter = parameter;
+	mainProceduresList_->insertLast(newItem);
 }
 
 
 
 void JbController::deleteMainProcedure(IVoidCallback* callback, void* parameter)
 {
-	uint32_t index = 0;
-	for(uint32_t i = 0; i < JBCONTROLLER_NUM_MAIN_PROCEDURES; i++) {
-		if((mainProcedures_[i] == callback) &&
-				mainProceduresParameters_[i] == parameter){
-			break;
-		}
-		else
-			index++;
-	}
-	if(index == (JBCONTROLLER_NUM_MAIN_PROCEDURES-1)) {
-		if((mainProcedures_[index] == callback) &&
-				mainProceduresParameters_[index] == parameter){
-			mainProcedures_[index] = NULL;
-			mainProceduresParameters_[index] = NULL;
-		}
-	}
-	else {
-		for(uint32_t i = index; i < (JBCONTROLLER_NUM_MAIN_PROCEDURES - 1); i++) {
-			mainProcedures_[i] = mainProcedures_[i+1];
-			mainProceduresParameters_[i] = mainProceduresParameters_[i+1];
-			if(mainProcedures_[i+1] == NULL)
+	if(!mainProceduresList_->isEmpty()){
+		LinkedList<MainProceduresListItem>::LinkIterator* iterator =
+				mainProceduresList_->getIterator();
+		iterator->reset();
+		while(1){
+			if((iterator->getCurrent()->callback == callback) &&
+					(iterator->getCurrent()->parameter == parameter)){
+				free_s(iterator->deleteCurrent());
+			}
+			if(!iterator->atEnd())
+				iterator->nextLink();
+			else
 				break;
 		}
 	}
