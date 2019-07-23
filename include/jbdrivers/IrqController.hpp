@@ -41,7 +41,7 @@ class IIrqListener
 public:
 	IIrqListener(void){}
 	virtual ~IIrqListener(void){}
-	virtual void irqHandler(IRQn_Type irqNumber) = 0;
+	virtual void irqHandler(int irqNumber) = 0;
 };
 
 
@@ -51,12 +51,12 @@ class IrqController
 {
 public:
 	static IrqController* getIrqController(void);
-	void enableInterrupt(IRQn_Type irqNumber);
-	void disableInterrupt(IRQn_Type irqNumber);
-	void setPriority(IRQn_Type irqNumber, uint32_t priority);
-    void addIrqListener(IIrqListener* const listener, IRQn_Type irqNumber);
+	void enableInterrupt(int irqNumber);
+	void disableInterrupt(int irqNumber);
+	void setPriority(int irqNumber, uint32_t priority);
+    void addIrqListener(IIrqListener* const listener, int irqNumber);
     void deleteIrqListener(IIrqListener* const listener);
-	void handleIrq(const IRQn_Type irqNumber);
+	void handleIrq(const int irqNumber);
 
 private:
 	IrqController(void);

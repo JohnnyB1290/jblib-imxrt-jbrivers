@@ -53,32 +53,32 @@ IrqController::IrqController(void)
 
 
 
-void IrqController::enableInterrupt(IRQn_Type irqNumber)
+void IrqController::enableInterrupt(int irqNumber)
 {
-	NVIC_ClearPendingIRQ(irqNumber);
-	NVIC_EnableIRQ(irqNumber);
+	NVIC_ClearPendingIRQ((IRQn_Type)irqNumber);
+	NVIC_EnableIRQ((IRQn_Type)irqNumber);
 }
 
 
 
-void IrqController::disableInterrupt(IRQn_Type irqNumber)
+void IrqController::disableInterrupt(int irqNumber)
 {
-	NVIC_DisableIRQ(irqNumber);
-	NVIC_ClearPendingIRQ(irqNumber);
+	NVIC_DisableIRQ((IRQn_Type)irqNumber);
+	NVIC_ClearPendingIRQ((IRQn_Type)irqNumber);
 }
 
 
 
-void IrqController::setPriority(IRQn_Type irqNumber, uint32_t priority)
+void IrqController::setPriority(int irqNumber, uint32_t priority)
 {
 	uint32_t prioritygroup = NVIC_GetPriorityGrouping();
-	NVIC_SetPriority(irqNumber,
+	NVIC_SetPriority((IRQn_Type)irqNumber,
 			NVIC_EncodePriority(prioritygroup, priority, 0));
 }
 
 
 
-void IrqController::addIrqListener(IIrqListener* const listener, IRQn_Type irqNumber)
+void IrqController::addIrqListener(IIrqListener* const listener, int irqNumber)
 {
 	ListenersListItem* newItem = new ListenersListItem();
 	newItem->listener = listener;
@@ -107,7 +107,7 @@ void IrqController::deleteIrqListener(IIrqListener* const listener)
 
 
 
-void IrqController::handleIrq(const IRQn_Type irqNumber)
+void IrqController::handleIrq(const int irqNumber)
 {
 	if(!this->listenersList_->isEmpty()){
 		LinkedList<ListenersListItem>::LinkIterator* iterator =

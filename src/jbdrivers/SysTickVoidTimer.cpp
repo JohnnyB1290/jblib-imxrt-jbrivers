@@ -136,7 +136,7 @@ void SysTickVoidTimer::deinitialize(void)
 
 
 
-void SysTickVoidTimer::irqHandler(IRQn_Type irqNumber)
+void SysTickVoidTimer::irqHandler(int irqNumber)
 {
 	if(this->callback_)
 		this->callback_->voidCallback((void*)this, NULL);

@@ -82,7 +82,7 @@ void DebugMon_Handler(void)
 
 void PendSV_Handler(void)
 {
-	irqController->handleIrq((IRQn_Type)PendSV_IRQn);
+	irqController->handleIrq(PendSV_IRQn);
 	while(1);
 }
 
@@ -93,792 +93,792 @@ void SysTick_Handler(void)
 
 void DMA0_DMA16_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)0);
+	irqController->handleIrq(0);
 }
 
 void DMA1_DMA17_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)1);
+	irqController->handleIrq(1);
 }
 
 void DMA2_DMA18_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)2);
+	irqController->handleIrq(2);
 }
 
 void DMA3_DMA19_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)3);
+	irqController->handleIrq(3);
 }
 
 void DMA4_DMA20_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)4);
+	irqController->handleIrq(4);
 }
 
 void DMA5_DMA21_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)5);
+	irqController->handleIrq(5);
 }
 
 void DMA6_DMA22_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)6);
+	irqController->handleIrq(6);
 }
 
 void DMA7_DMA23_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)7);
+	irqController->handleIrq(7);
 }
 
 void DMA8_DMA24_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)8);
+	irqController->handleIrq(8);
 }
 
 void DMA9_DMA25_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)9);
+	irqController->handleIrq(9);
 }
 
 void DMA10_DMA26_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)10);
+	irqController->handleIrq(10);
 }
 
 void DMA11_DMA27_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)11);
+	irqController->handleIrq(11);
 }
 
 void DMA12_DMA28_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)12);
+	irqController->handleIrq(12);
 }
 
 void DMA13_DMA29_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)13);
+	irqController->handleIrq(13);
 }
 
 void DMA14_DMA30_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)14);
+	irqController->handleIrq(14);
 }
 
 void DMA15_DMA31_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)15);
+	irqController->handleIrq(15);
 }
 
 void DMA_ERROR_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)16);
+	irqController->handleIrq(16);
 }
 
 void CTI0_ERROR_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)17);
+	irqController->handleIrq(17);
 }
 
 void CTI1_ERROR_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)18);
+	irqController->handleIrq(18);
 }
 
 void CORE_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)19);
+	irqController->handleIrq(19);
 }
 
 void LPUART1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)20);
+	irqController->handleIrq(20);
 }
 
 void LPUART2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)21);
+	irqController->handleIrq(21);
 }
 
 void LPUART3_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)22);
+	irqController->handleIrq(22);
 }
 
 void LPUART4_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)23);
+	irqController->handleIrq(23);
 }
 
 void LPUART5_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)24);
+	irqController->handleIrq(24);
 }
 
 void LPUART6_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)25);
+	irqController->handleIrq(25);
 }
 
 void LPUART7_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)26);
+	irqController->handleIrq(26);
 }
 
 void LPUART8_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)27);
+	irqController->handleIrq(27);
 }
 
 void LPI2C1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)28);
+	irqController->handleIrq(28);
 }
 
 void LPI2C2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)29);
+	irqController->handleIrq(29);
 }
 
 void LPI2C3_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)30);
+	irqController->handleIrq(30);
 }
 
 void LPI2C4_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)31);
+	irqController->handleIrq(31);
 }
 
 void LPSPI1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)32);
+	irqController->handleIrq(32);
 }
 
 void LPSPI2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)33);
+	irqController->handleIrq(33);
 }
 
 void LPSPI3_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)34);
+	irqController->handleIrq(34);
 }
 
 void LPSPI4_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)35);
+	irqController->handleIrq(35);
 }
 
 void CAN1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)36);
+	irqController->handleIrq(36);
 }
 
 void CAN2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)37);
+	irqController->handleIrq(37);
 }
 
 void FLEXRAM_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)38);
+	irqController->handleIrq(38);
 }
 
 void KPP_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)39);
+	irqController->handleIrq(39);
 }
 
 void TSC_DIG_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)40);
+	irqController->handleIrq(40);
 }
 
 void GPR_IRQ_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)41);
+	irqController->handleIrq(41);
 }
 
 void LCDIF_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)42);
+	irqController->handleIrq(42);
 }
 
 void CSI_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)43);
+	irqController->handleIrq(43);
 }
 
 void PXP_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)44);
+	irqController->handleIrq(44);
 }
 
 void WDOG2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)45);
+	irqController->handleIrq(45);
 }
 
 void SNVS_HP_WRAPPER_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)46);
+	irqController->handleIrq(46);
 }
 
 void SNVS_HP_WRAPPER_TZ_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)47);
+	irqController->handleIrq(47);
 }
 
 void SNVS_LP_WRAPPER_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)48);
+	irqController->handleIrq(48);
 }
 
 void CSU_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)49);
+	irqController->handleIrq(49);
 }
 
 void DCP_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)50);
+	irqController->handleIrq(50);
 }
 
 void DCP_VMI_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)51);
+	irqController->handleIrq(51);
 }
 
 void Reserved68_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)52);
+	irqController->handleIrq(52);
 }
 
 void TRNG_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)53);
+	irqController->handleIrq(53);
 }
 
 void SJC_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)54);
+	irqController->handleIrq(54);
 }
 
 void BEE_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)55);
+	irqController->handleIrq(55);
 }
 
 void SAI1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)56);
+	irqController->handleIrq(56);
 }
 
 void SAI2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)57);
+	irqController->handleIrq(57);
 }
 
 void SAI3_RX_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)58);
+	irqController->handleIrq(58);
 }
 
 void SAI3_TX_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)59);
+	irqController->handleIrq(59);
 }
 
 void SPDIF_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)60);
+	irqController->handleIrq(60);
 }
 
 void PMU_EVENT_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)61);
+	irqController->handleIrq(61);
 }
 
 void Reserved78_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)62);
+	irqController->handleIrq(62);
 }
 
 void TEMP_LOW_HIGH_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)63);
+	irqController->handleIrq(63);
 }
 
 void TEMP_PANIC_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)64);
+	irqController->handleIrq(64);
 }
 
 void USB_PHY1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)65);
+	irqController->handleIrq(65);
 }
 
 void USB_PHY2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)66);
+	irqController->handleIrq(66);
 }
 
 void ADC1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)67);
+	irqController->handleIrq(67);
 }
 
 void ADC2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)68);
+	irqController->handleIrq(68);
 }
 
 void DCDC_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)69);
+	irqController->handleIrq(69);
 }
 
 void Reserved86_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)70);
+	irqController->handleIrq(70);
 }
 
 void Reserved87_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)71);
+	irqController->handleIrq(71);
 }
 
 void GPIO1_INT0_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)72);
+	irqController->handleIrq(72);
 }
 
 void GPIO1_INT1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)73);
+	irqController->handleIrq(73);
 }
 
 void GPIO1_INT2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)74);
+	irqController->handleIrq(74);
 }
 
 void GPIO1_INT3_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)75);
+	irqController->handleIrq(75);
 }
 
 void GPIO1_INT4_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)76);
+	irqController->handleIrq(76);
 }
 
 void GPIO1_INT5_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)77);
+	irqController->handleIrq(77);
 }
 
 void GPIO1_INT6_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)78);
+	irqController->handleIrq(78);
 }
 
 void GPIO1_INT7_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)79);
+	irqController->handleIrq(79);
 }
 
 void GPIO1_Combined_0_15_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)80);
+	irqController->handleIrq(80);
 }
 
 void GPIO1_Combined_16_31_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)81);
+	irqController->handleIrq(81);
 }
 
 void GPIO2_Combined_0_15_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)82);
+	irqController->handleIrq(82);
 }
 
 void GPIO2_Combined_16_31_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)83);
+	irqController->handleIrq(83);
 }
 
 void GPIO3_Combined_0_15_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)84);
+	irqController->handleIrq(84);
 }
 
 void GPIO3_Combined_16_31_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)85);
+	irqController->handleIrq(85);
 }
 
 void GPIO4_Combined_0_15_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)86);
+	irqController->handleIrq(86);
 }
 
 void GPIO4_Combined_16_31_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)87);
+	irqController->handleIrq(87);
 }
 
 void GPIO5_Combined_0_15_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)88);
+	irqController->handleIrq(88);
 }
 
 void GPIO5_Combined_16_31_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)89);
+	irqController->handleIrq(89);
 }
 
 void FLEXIO1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)90);
+	irqController->handleIrq(90);
 }
 
 void FLEXIO2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)91);
+	irqController->handleIrq(91);
 }
 
 void WDOG1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)92);
+	irqController->handleIrq(92);
 }
 
 void RTWDOG_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)93);
+	irqController->handleIrq(93);
 }
 
 void EWM_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)94);
+	irqController->handleIrq(94);
 }
 
 void CCM_1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)95);
+	irqController->handleIrq(95);
 }
 
 void CCM_2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)96);
+	irqController->handleIrq(96);
 }
 
 void GPC_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)97);
+	irqController->handleIrq(97);
 }
 
 void SRC_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)98);
+	irqController->handleIrq(98);
 }
 
 void Reserved115_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)99);
+	irqController->handleIrq(99);
 }
 
 void GPT1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)100);
+	irqController->handleIrq(100);
 }
 
 void GPT2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)101);
+	irqController->handleIrq(101);
 }
 
 void PWM1_0_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)102);
+	irqController->handleIrq(102);
 }
 
 void PWM1_1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)103);
+	irqController->handleIrq(103);
 }
 
 void PWM1_2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)104);
+	irqController->handleIrq(104);
 }
 
 void PWM1_3_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)105);
+	irqController->handleIrq(105);
 }
 
 void PWM1_FAULT_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)106);
+	irqController->handleIrq(106);
 }
 
 void FLEXSPI2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)107);
+	irqController->handleIrq(107);
 }
 
 void FLEXSPI_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)108);
+	irqController->handleIrq(108);
 }
 
 void SEMC_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)109);
+	irqController->handleIrq(109);
 }
 
 void USDHC1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)110);
+	irqController->handleIrq(110);
 }
 
 void USDHC2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)111);
+	irqController->handleIrq(111);
 }
 
 void USB_OTG2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)112);
+	irqController->handleIrq(112);
 }
 
 void USB_OTG1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)113);
+	irqController->handleIrq(113);
 }
 
 void ENET_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)114);
+	irqController->handleIrq(114);
 }
 
 void ENET_1588_Timer_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)115);
+	irqController->handleIrq(115);
 }
 
 void XBAR1_IRQ_0_1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)116);
+	irqController->handleIrq(116);
 }
 
 void XBAR1_IRQ_2_3_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)117);
+	irqController->handleIrq(117);
 }
 
 void ADC_ETC_IRQ0_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)118);
+	irqController->handleIrq(118);
 }
 
 void ADC_ETC_IRQ1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)119);
+	irqController->handleIrq(119);
 }
 
 void ADC_ETC_IRQ2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)120);
+	irqController->handleIrq(120);
 }
 
 void ADC_ETC_ERROR_IRQ_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)121);
+	irqController->handleIrq(121);
 }
 
 void PIT_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)122);
+	irqController->handleIrq(122);
 }
 
 void ACMP1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)123);
+	irqController->handleIrq(123);
 }
 
 void ACMP2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)124);
+	irqController->handleIrq(124);
 }
 
 void ACMP3_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)125);
+	irqController->handleIrq(125);
 }
 
 void ACMP4_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)126);
+	irqController->handleIrq(126);
 }
 
 void Reserved143_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)127);
+	irqController->handleIrq(127);
 }
 
 void Reserved144_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)128);
+	irqController->handleIrq(128);
 }
 
 void ENC1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)129);
+	irqController->handleIrq(129);
 }
 
 void ENC2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)130);
+	irqController->handleIrq(130);
 }
 
 void ENC3_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)131);
+	irqController->handleIrq(131);
 }
 
 void ENC4_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)132);
+	irqController->handleIrq(132);
 }
 
 void TMR1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)133);
+	irqController->handleIrq(133);
 }
 
 void TMR2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)134);
+	irqController->handleIrq(134);
 }
 
 void TMR3_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)135);
+	irqController->handleIrq(135);
 }
 
 void TMR4_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)136);
+	irqController->handleIrq(136);
 }
 
 void PWM2_0_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)137);
+	irqController->handleIrq(137);
 }
 
 void PWM2_1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)138);
+	irqController->handleIrq(138);
 }
 
 void PWM2_2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)139);
+	irqController->handleIrq(139);
 }
 
 void PWM2_3_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)140);
+	irqController->handleIrq(140);
 }
 
 void PWM2_FAULT_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)141);
+	irqController->handleIrq(141);
 }
 
 void PWM3_0_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)142);
+	irqController->handleIrq(142);
 }
 
 void PWM3_1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)143);
+	irqController->handleIrq(143);
 }
 
 void PWM3_2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)144);
+	irqController->handleIrq(144);
 }
 
 void PWM3_3_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)145);
+	irqController->handleIrq(145);
 }
 
 void PWM3_FAULT_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)146);
+	irqController->handleIrq(146);
 }
 
 void PWM4_0_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)147);
+	irqController->handleIrq(147);
 }
 
 void PWM4_1_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)148);
+	irqController->handleIrq(148);
 }
 
 void PWM4_2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)149);
+	irqController->handleIrq(149);
 }
 
 void PWM4_3_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)150);
+	irqController->handleIrq(150);
 }
 
 void PWM4_FAULT_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)151);
+	irqController->handleIrq(151);
 }
 
 void ENET2_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)152);
+	irqController->handleIrq(152);
 }
 
 void ENET2_1588_Timer_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)153);
+	irqController->handleIrq(153);
 }
 
 void CAN3_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)154);
+	irqController->handleIrq(154);
 }
 
 void Reserved171_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)155);
+	irqController->handleIrq(155);
 }
 
 void FLEXIO3_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)156);
+	irqController->handleIrq(156);
 }
 
 void GPIO6_7_8_9_IRQHandler(void)
 {
-	irqController->handleIrq((IRQn_Type)157);
+	irqController->handleIrq(157);
 }
 
 #ifdef __cplusplus

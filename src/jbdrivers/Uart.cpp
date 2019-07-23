@@ -140,7 +140,7 @@ void Uart::initialize(void* (* const mallocFunc)(size_t),
 
 
 
-void Uart::irqHandler(IRQn_Type irqNumber)
+void Uart::irqHandler(int irqNumber)
 {
 	static uint8_t byte = 0;
 	if(this->initialized_) {

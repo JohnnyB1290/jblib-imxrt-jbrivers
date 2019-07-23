@@ -57,7 +57,7 @@ public:
 private:
 	Uart(uint8_t number, uint32_t baudrate);
 	virtual ~Uart(void);
-	virtual void irqHandler(IRQn_Type irqNumber);
+	virtual void irqHandler(int irqNumber);
 
 	static Uart* uarts_[UARTS_NUM];
 	static LPUART_Type* bases_[UARTS_NUM];
